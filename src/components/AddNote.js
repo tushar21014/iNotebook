@@ -46,6 +46,21 @@ function FormValidations() {
 
     const { errors, touched, handleSubmit, getFieldProps } = formik;
 
+    const inputLabelProps = {
+        style: {
+            color: '#00A8E8',
+            borderColor: '#FF6600',
+        },
+    };
+
+    const inputProps = {
+        style: {
+            color: '#FFFFFF',
+            caretColor: "#FFD700",
+            outlineColor: "#FFD700"
+        },
+    };
+
     return (
         <div>
             <Navbar />
@@ -60,21 +75,30 @@ function FormValidations() {
                         error={Boolean(touched.title && errors.title)} 
                         helperText={touched.title && errors.title}  
                         color="secondary" 
-                        label="Title" variant="outlined" fullWidth   />
+                        label="Title" variant="outlined" fullWidth   
+                        InputLabelProps={inputLabelProps}
+                        InputProps={inputProps}
+                        />
                     </div>
                     <div className="description mb-4">
                         <TextField 
                         {...getFieldProps('description')} 
                         error={Boolean(touched.description && errors.description)} 
                         helperText={touched.description && errors.description}
-                         color="secondary" label="Description" variant="outlined" fullWidth   />
+                         color="secondary" label="Description" variant="outlined" fullWidth   
+                         InputLabelProps={inputLabelProps}
+                        InputProps={inputProps}
+                         />
                     </div>
                     <div className="tags mb-4">
                         <TextField 
                         {...getFieldProps('tag')} 
                         error={Boolean(touched.tag && errors.tag)}
                         helperText={touched.tag && errors.tag}
-                        color="secondary" label="Tags" variant="outlined" fullWidth />
+                        color="secondary" label="Tags" variant="outlined" fullWidth 
+                        InputLabelProps={inputLabelProps}
+                        InputProps={inputProps}
+                        />
                     </div>
                     <Button type="submit" fullWidth size="large" className="mb-4" variant="contained" color="secondary" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>Add Note</Button>
                 </form>

@@ -54,7 +54,7 @@ function NoteItem({ note }) {
                 </form>
             </Dialog>
 
-            <div className="card">
+            <div className="card" style={{background: "#350757", color: "FFFFFF"}}>
                 <div className="card-body">
                     <div className="d-flex align-items-center">
                         <h5 className="card-title">{note.title}</h5>

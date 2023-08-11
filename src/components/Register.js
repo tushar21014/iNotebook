@@ -1,18 +1,19 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { TextField, Button, InputAdornment, InputLabel, OutlinedInput, FormControl, IconButton, FormHelperText } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link, useNavigate } from "react-router-dom";
 import avataars from "../images/avataaars.png"
-import Alertss from "./Alertss";
-import { AlertContext } from '../context/AlertContext';
+
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Register() {
 
-    const { showAlert } = useContext(AlertContext)
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
 
@@ -51,22 +52,48 @@ function Register() {
             if (json.success) {
                 navigate("/login")
             } else {
-                showAlert(json.message, "error")
+                console.error(json.message, "error")
+                toast.warn('Invalid Credentials!', {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
             }
         }
     })
 
     const { errors, touched, handleSubmit, getFieldProps } = formik;
 
+
+    const inputLabelProps = {
+        style: {
+            color: '#00A8E8',
+            borderColor: '#FF6600',
+        },
+    };
+
+    const inputProps = {
+        style: {
+            color: '#FFFFFF',
+            caretColor: "#FFD700",
+            outlineColor: "#FFD700"
+        },
+    };
+
+
     return (
         <div>
-            <Alertss />
-            <div className="d-flex">
+            <div className="d-flex" style={{borderRadius: "20px"}}>
                 <div className="col-md-5">
                     <img className="img-fluid" src={avataars} alt="register" style={{ width: "100%", height: "100vh", objectFit: "cover" }} />
                 </div>
 
-                <div className="col-md-7 ps-5 pe-5 pt-5" style={{ width: "50%" }}>
+                <div className="col-md-7 ps-5 pe-5 pt-5" style={{  backgroundColor: "#171730" }}>
                     <Button className="mb-4" variant="text" color="secondary" startIcon={<ArrowBackIcon />} component={Link} to="/" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif" }}>Home</Button>
                     <h2 style={{ fontWeight: "Bold" }}>Create a new account</h2>
                     <p className="mb-4">Use your email to create a new account</p>
@@ -75,23 +102,30 @@ function Register() {
                             <TextField {...getFieldProps('username')}
                                 error={Boolean(touched.username && errors.username)}
                                 helperText={touched.username && errors.username}
-                                color="secondary" label="Username" variant="outlined" fullWidth />
+                                color="secondary" label="Username" variant="outlined" fullWidth 
+                                InputLabelProps={inputLabelProps}
+                                InputProps={inputProps}
+                                />
                         </div>
                         <div className="mb-4">
                             <TextField {...getFieldProps('email')}
                                 error={Boolean(touched.email && errors.email)}
                                 helperText={touched.email && errors.email}
-                                type="email" color="secondary" label="Email" variant="outlined" fullWidth />
+                                type="email" color="secondary" label="Email" variant="outlined" fullWidth 
+                                InputLabelProps={inputLabelProps}
+                                InputProps={inputProps}
+                                />
                         </div>
                         <div className="mb-2">
                             <FormControl variant="outlined" fullWidth>
-                                <InputLabel color="secondary" error={Boolean(touched.password && errors.password)} htmlFor="outlined-adornment-password">Password</InputLabel>
+                                <InputLabel color="secondary" error={Boolean(touched.password && errors.password)} htmlFor="outlined-adornment-password" style={inputLabelProps.style}>Password</InputLabel>
                                 <OutlinedInput
                                     id="outlined-adornment-password"
                                     color="secondary"
                                     type={showPassword ? 'text' : 'password'}
                                     {...getFieldProps('password')}
                                     error={Boolean(touched.password && errors.password)}
+                                    style={inputProps.style}
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
@@ -100,7 +134,7 @@ function Register() {
                                                 onMouseDown={handleMouseDownPassword}
                                                 edge="end"
                                             >
-                                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                {showPassword ? <VisibilityOff style={{fill: "#FFFFFF"}} /> : <Visibility style={{fill: "#FFFFFF"}} />}
                                             </IconButton>
                                         </InputAdornment>
                                     }
@@ -113,6 +147,18 @@ function Register() {
                     <p>Have an account? <Link to="/login" >login</Link> </p>
                 </div>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     )
 }

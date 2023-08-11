@@ -2,10 +2,12 @@ import React from 'react'
 import Navbar from "./Navbar";
 import '../styles/about.css';
 import awesome from '../images/about - awesome.jpeg'
+import awesome2 from '../images/image3.jpeg'
 import login from '../images/about - awesome.svg'
-import { Link } from "react-router-dom";
 import { Button } from '@mui/material';
 import Alertss from "./Alertss";
+import { Link } from "react-router-dom";
+import Footer from './Footer';
 
 function About() {
     return (
@@ -14,7 +16,7 @@ function About() {
             <Alertss />
             <div className="text-white aboutImg text-center">
                 <div className="note-img">
-                    <h1 className="display-4">Empowering  Students</h1>
+                    <h1 className="display-4">Elevate Your NoteSync</h1>
                     <p>An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee</p>
                 </div>
             </div>
@@ -22,9 +24,10 @@ function About() {
             <div className="container mt-5 ">
                 <div className="row">
                     <div className="col-md-6 d-flex flex-column justify-content-center">
-                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Make something <span style={{ color: "#9C27B0" }}>Awesome</span> </h2>
-                        <p>iNotebook is made from the pain of writing all the things in notebook which is very hectic :(, So we mad an online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee.
-                            you can also access your notes anywhere in your world, at anytime time . So dont forget to Create note because creating anything is always important
+                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Write something <span style={{ color: "#9C27B0" }}>Awesome</span> </h2>
+                        <p>
+                            Have you ever felt the frustration of scribbling down endless notes in a physical notebook? The struggle is real, and we get it. That's why we birthed NoteSync - an ingenious online platform designed to liberate you from the shackles of traditional note-taking.
+                            Imagine saying goodbye to the days of battling cramped handwriting, lost pages, and the unending quest to find that one vital piece of information.
                         </p>
                         <div className="d-flex justify-content-center mt-3">
                             <Button component={Link} to="/new" variant="contained" color="secondary" style={{ color: "White", textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.3rem" }}>Create New Note</Button>
@@ -40,77 +43,37 @@ function About() {
                         <img className="img-fluid" src={login} alt="about-awesome" />
                     </div>
                     <div className="col-md-6 d-flex flex-column justify-content-center">
-                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Powering the <span style={{ color: "#9C27B0" }}>internet’s visuals</span> </h2>
+                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Embrace Creation, Embrace  <span style={{ color: "#9C27B0" }}> NoteSync</span> </h2>
                         <p>
-                            How we started? The concept was simple. iNotebook was born from the pain of writing all the things in notebook which is very hectic :( .
-                            An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee
+                            In a world where creativity reigns supreme, don't let the mundane bind you. Every note you craft, every idea you foster, it all starts with a spark. Let NoteSync be the canvas where your sparks evolve into brilliance.
+                            Join us, and remember: The act of creation is always significant. Just like every note you craft. Let NoteSync be your partner in this remarkable journey.
                         </p>
                         <div className="d-flex justify-content-center mt-3">
                             <Button component={Link} to="/register" variant="contained" color="secondary" style={{ color: "White", textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.3rem" }}>Sign up now</Button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <footer>
-                <div className="content">
-                    <div className="top">
-                        <div className="logo-details">
-                            <span className="logo_name"><span style={{ color: "#9C27B0" }}>i</span>Notebook</span>
-                        </div>
-                        <div className="media-icons">
-                            <Link to="/"><i className="fab fa-facebook-f"></i></Link>
-                            <Link to="/"><i className="fab fa-twitter"></i></Link>
-                            <Link to="/"><i className="fab fa-instagram"></i></Link>
-                            <Link to="/"><i className="fab fa-linkedin-in"></i></Link>
-                            <Link to="/"><i className="fab fa-youtube"></i></Link>
+                <div className="row">
+                    <div className="col-md-6 d-flex flex-column justify-content-center">
+                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Join the Revolution: <span style={{ color: "#9C27B0" }}> Elevate Your Education </span> </h2>
+                        <p>
+                        It's not just about notes; it's about inspiration that breeds innovation. It's about shaping a future where learning knows no bounds. Join us on this transformative journey, where brilliance is not just an outcome; it's a way of life. <br/>
+                        Unleash the power of your ideas. Dive into a world where learning is an experience, where innovation thrives, and where you hold the pen to your destiny. Empower yourself, for you are the author of your academic narrative. Welcome to a future where education is not just learned; it's lived.
+                        </p>
+                        <div className="d-flex justify-content-center mt-3">
+                            <Button component={Link} to="/new" variant="contained" color="secondary" style={{ color: "White", textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.3rem" }}>Create New Note</Button>
                         </div>
                     </div>
-                    <div className="link-boxes">
-                        <ul className="box">
-                            <li className="link_name">Company</li>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/new">New Notes</Link></li>
-                            <li><Link to="/about">About us</Link></li>
-                            <li><Link to="/">Get started</Link></li>
-                        </ul>
-                        <ul className="box">
-                            <li className="link_name">Services</li>
-                            <li><Link to="/">Your Notes</Link></li>
-                            <li><Link to="/new">New Note</Link></li>
-                        </ul>
-                        <ul className="box">
-                            <li className="link_name">Account</li>
-                            <li><Link to="/login">Sign-in</Link></li>
-                            <li><Link to="/register">Join Free</Link></li>
-                        </ul>
-                        <ul className="box">
-                            <li className="link_name">Top Categories</li>
-                            <li><Link to="/c/61554bfe801949ad7b9be4ff">Tent Notes</Link></li>
-                            <li><Link to="/c/61554c2753bcf306407cb1bd">RV and Van Notes</Link></li>
-                            <li><Link to="/c/61554c43d2a6b15f764aff36">Canoe Notes</Link></li>
-                            <li><Link to="c/61554c63dfd6a37d71449b5c">Survivalist Notes</Link></li>
-                        </ul>
-                        <ul className="box input-box">
-                            <li className="link_name">About iNotebook</li>
-                            <li style={{color: "#F7FFFF"}}>
-                            An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee
-                            </li>
-                        </ul>
+                    <div className="col-md-6">
+                        <img className="img-fluid awesome" src={awesome2} alt="about-awesome"  style={{height: "80%", display: "block", margin: "0 auto", borderRadius: "10px"}}/>
                     </div>
                 </div>
-                <div className="bottom-details">
-                    <div className="bottom_text">
-                        <span className="copyright_text">Copyright © 2021 <Link to="/">iNotebook</Link>All rights reserved</span>
-                        <span className="policy_terms">
-                            <Link to="/">Privacy policy</Link>
-                            <Link to="/">Terms & condition</Link>
-                        </span>
-                    </div>
-                </div>
-            </footer>
+            </div>
+            <Footer />
 
         </div>
+
     )
 }
 

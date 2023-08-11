@@ -1,23 +1,23 @@
 import React, { useContext, useState } from 'react'
-import { TextField, Button, InputAdornment, InputLabel, OutlinedInput, FormControl, IconButton, FormHelperText, colors } from '@mui/material';
+import { TextField, Button, InputAdornment, InputLabel, OutlinedInput, FormControl, IconButton, FormHelperText} from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/home.css"
-import Alertss from "./Alertss";
+
 import { AlertContext } from '../context/AlertContext';
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import '../styles/login.css';
 
 
 function Login(props) {
 
-    const location = useLocation()
     const navigate = useNavigate()
     const { showAlert } = useContext(AlertContext)
     const [showPassword, setShowPassword] = useState(false)
@@ -48,7 +48,17 @@ function Login(props) {
                 navigate(`/`)
                 showAlert(`Welcome back ${values.username}`, "success")
             } else {
-                showAlert(json.message, "error")
+                console.error(json.message, "error")
+                toast.warn('Invalid Credentials!', {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
             }
         }
     })
@@ -80,7 +90,6 @@ function Login(props) {
 
     return (
         <div className='main-body'>
-            <Alertss alert={alert} />
             <div className="container mt-5 addnotes" >
                 <Button className="mb-4" variant="text" color="secondary" startIcon={<ArrowBackIcon />} component={Link} to="/" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif" }}>Home</Button>
                 <h2 style={{ fontWeight: "Bold" }}>Login</h2>
@@ -106,15 +115,14 @@ function Login(props) {
                                 error={Boolean(touched.password && errors.password)}
                                 style={inputProps.style}
                                 endAdornment={
-                                    <InputAdornment position="end" style={{fill: "#FFFFFF"}}>
+                                    <InputAdornment position="end">
                                         <IconButton
                                             aria-label="toggle password visibility"
                                             onClick={handleClickShowPassword}
                                             onMouseDown={handleMouseDownPassword}
                                             edge="end"
-                                            style={{fill: "#FFFFFF"}}
                                         >
-                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                            {showPassword ? <VisibilityOff style={{ fill: "#FFFFFF" }} /> : <Visibility style={{ fill: "#FFFFFF" }} />}
                                         </IconButton>
                                     </InputAdornment>
                                 }
@@ -126,6 +134,18 @@ function Login(props) {
                 </form>
                 <p>Don't have an account? <Link to="/register" >register</Link> </p>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     )
 }
