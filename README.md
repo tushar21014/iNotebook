@@ -39,29 +39,29 @@ Education isn't confined to textbooks; it's a living, breathing part of you. Not
 
 In the project directory, you can run the following commands:
 
-### `npm start`
+```bash npm start```
 
 Runs the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run build`
+```bash npm run build```
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### `npm test`
+```bash npm test```
 
 Launches the test runner in the interactive watch mode.
 By default, it runs tests related to files with the `.test.js` or `.spec.js` extension.
 
-### `npm run eject`
+```bash npm run eject```
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
 Ejects the project configuration and dependencies from the Create React App scripts.
 It allows you to customize the build configuration, dependencies, and scripts.
 
-### `npm run both`
+```bash npm run both```
 
 Runs both the React app and the Node.js backend concurrently.
 This command uses the `concurrently` package to start both processes simultaneously.
