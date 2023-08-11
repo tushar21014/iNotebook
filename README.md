@@ -18,8 +18,8 @@ NoteSync isn't just a platform; it's a canvas where your ideas evolve into maste
 
 - **Create:** Give life to your thoughts with ease. Craft notes that mirror the depth of your insights.
 - **Edit:** Refine your notes like a sculptor perfecting a masterpiece. Every modification brings you closer to brilliance.
-- **Upload:** Seamlessly integrate multimedia elements – images, videos, audio – into your notes, elevating their impact.
 - **Delete:** Embrace the power of renewal. Clear the slate for fresh perspectives and new horizons.
+- **Tags:** Add tags to your notes to keep them organized and beautiful
 
 ## Embrace the Spark of Creation
 
