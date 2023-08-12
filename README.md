@@ -35,6 +35,22 @@ Education isn't confined to textbooks; it's a living, breathing part of you. Not
 
 ---
 
+## Screenshots
+
+### Home
+![Home](https://github.com/Rahul-Sahani04/NoteSync/blob/main/project%20images/NoteSync-Home.png?raw=true)
+
+### About
+![About](https://github.com/Rahul-Sahani04/NoteSync/blob/main/project%20images/NoteSync-About.png?raw=true)
+
+### Register
+![Register](https://github.com/Rahul-Sahani04/NoteSync/blob/main/project%20images/NoteSync-Register.png?raw=true)
+
+### Login
+![Login](https://github.com/Rahul-Sahani04/NoteSync/blob/main/project%20images/NoteSync-Login.png?raw=true)
+
+---
+
 ## Available Commands
 
 In the project directory, you can run the following commands:
