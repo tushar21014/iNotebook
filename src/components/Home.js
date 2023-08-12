@@ -1,5 +1,5 @@
 import React from 'react'
-import noteImg from '../images/NoteSync.svg'
+import noteImg from '../images/Home.svg'
 import { Link } from "react-router-dom";
 import { Button } from '@mui/material';
 import "../styles/home.css"
@@ -24,7 +24,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="col-md-7 d-flex flex-column align-items-center">
-                        <img className="img-fluid" style={{width: "75%"}} src={noteImg} alt="NoteSync" />
+                        <img className="img-fluid" style={{width: "60%"}} src={noteImg} alt="NoteSync" />
                     </div>
                 </div>
 

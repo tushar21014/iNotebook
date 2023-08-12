@@ -4,14 +4,14 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link, useNavigate } from "react-router-dom";
-import avataars from "../images/avataaars.png"
+import avataars from "../images/Login.svg"
 
 import { AlertContext } from '../context/AlertContext';
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {

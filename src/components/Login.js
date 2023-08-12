@@ -84,7 +84,8 @@ function Login(props) {
     };
 
     return (
-        <div className='main-body'>
+        <div className='main-body '>
+            <div className='bg-svg'></div>
             <div className="container mt-5 addnotes" >
                 <Button className="mb-4" variant="text" color="secondary" startIcon={<ArrowBackIcon />} component={Link} to="/" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif" }}>Home</Button>
                 <h2 style={{ fontWeight: "Bold" }}>Login</h2>

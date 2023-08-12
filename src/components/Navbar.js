@@ -50,7 +50,7 @@ function Navbar() {
                                     </li>
                                 </div> :
                                 <li>
-                                    <Button onClick={() => handleLogout(success)} className="nav-item ms-2" variant="outlined" color="secondary" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem" }}>
+                                    <Button onClick={() => handleLogout("success")} className="nav-item ms-2" variant="outlined" color="secondary" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem" }}>
                                         logout
                                     </Button>
                                 </li>
