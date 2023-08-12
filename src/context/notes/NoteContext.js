@@ -51,7 +51,7 @@ export function NoteProvider(props) {
     }
 
     const edit = async (title, description, tag, id) => {
-        const response = await fetch(`${HOST}/api/notes/${id}`, {
+        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
