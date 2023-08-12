@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 import { Button } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { AlertContext } from '../context/AlertContext';
-import { success } from 'concurrently/src/defaults';
+
+import menu from '../images/menu-icon.png'
+
 
 function Navbar() {
     
@@ -21,7 +23,7 @@ function Navbar() {
             <div className="container-fluid">
                 <NavLink activeclassname="active" className="navbar-brand" to="/"><span style={{ color: "#9C27B0" }}>Note</span>Sync</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span style={{background: menu, backgroundColor: "rgb(156, 39, 176)"}}></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">

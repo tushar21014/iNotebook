@@ -47,6 +47,7 @@
 
 @media (max-width: 1000px) {
   .aboutImg {
+    width: 100dvw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -274,6 +275,7 @@ footer .bottom-details .bottom_text {
 }
 
 @media (max-width: 700px) {
+
   footer {
     position: relative;
   }
