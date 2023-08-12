@@ -4,14 +4,12 @@ export const NoteContext = createContext()
 
 export function NoteProvider(props) {
 
-    const HOST = "http://localhost:8080"
-
     const initialNotes = []
 
     const [notes, setNotes] = useState(initialNotes)
 
     const getNotes = async () => {
-        const response = await fetch(`${HOST}/api/notes/`, {
+        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
