@@ -11,7 +11,6 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "backend": "^0.0.0",
     "concurrently": "^6.4.0",
     "dotenv": "^10.0.0",
     "formik": "^2.2.9",
@@ -22,6 +21,7 @@
     "react-scripts": "4.0.3",
     "react-toastify": "^8.0.0",
     "react-top-loading-bar": "^2.1.0",
+    "vercel": "^31.2.3",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
   },
