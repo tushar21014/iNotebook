@@ -22,7 +22,7 @@ export function NoteProvider(props) {
     }
 
     const add = async (newNotes) => {
-        const response = await fetch(`${HOST}/api/notes/`, {
+        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export function NoteProvider(props) {
     }
 
     const remove = async (removeId) => {
-        const response = await fetch(`${HOST}/api/notes/${removeId}`, {
+        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/${removeId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
