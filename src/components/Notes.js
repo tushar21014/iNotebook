@@ -5,12 +5,33 @@ import empty from '../images/empty.svg'
 import { useNavigate } from "react-router-dom";
 import { AlertContext } from '../context/AlertContext';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Notes() {
 
     const { notes, getNotes } = useContext(NoteContext)
     const navigate = useNavigate()
     const { showAlert } = useContext(AlertContext)
+
+
+    const handleLogout = (evt) => {
+        localStorage.removeItem('token')
+        navigate('/login')
+        toast.warn('Try Login Again!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+        
+    }
+
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -20,23 +41,36 @@ function Notes() {
             navigate('/about')
             showAlert("You need to signed in first", "error")
         }
-        // eslint-disable-next-line
     }, [])
 
     return (
         <div className="row ps-5 mt-4 mb-1">
             <h1 className="display-6">Your Notes: </h1>
-            {notes.length === 0 && 
-            <div className="d-flex ">
-                <p style={{position: "absolute", left: "35%", bottom: "-10%"}}>Create your first note :) !!!!!</p>
-                <img className="img-fluid ms-5 mt-3" src={empty} alt="empty" style={{width: "30%", opacity: "0.5"}} />
-            </div>
+            {notes.length === 0 &&
+                <div className="d-flex ">
+                    <p style={{ position: "absolute", left: "35%", bottom: "-10%" }}>Create your first note :) !!!!!</p>
+                    <img className="img-fluid ms-5 mt-3" src={empty} alt="empty" style={{ width: "30%", opacity: "0.5" }} />
+                </div>
             }
-            {notes.map(note => 
+            {notes ? notes.map(note =>
                 <NoteItem key={note._id} note={note} />
-            )}
+            )
+        : handleLogout()
+        }
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     )
 }
 
-export default Notes
+export default Notes;

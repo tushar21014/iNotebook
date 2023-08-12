@@ -3,24 +3,23 @@ import { NavLink } from "react-router-dom";
 import { Button } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { AlertContext } from '../context/AlertContext';
-
+import { success } from 'concurrently/src/defaults';
 
 function Navbar() {
-
+    
+    const { showAlert } = useContext(AlertContext)
     const navigate = useNavigate()
 
-    const { showAlert } = useContext(AlertContext)
-
-    const handleLogout = (evt) => {
+    const handleLogout = (message) => {
         localStorage.removeItem('token')
         navigate('/login')
-        showAlert("GoodBye :(", "success")
+        showAlert(message, "error")
     }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <NavLink activeclassname="active" className="navbar-brand" to="/">NoteSync</NavLink>
+                <NavLink activeclassname="active" className="navbar-brand" to="/"><span style={{ color: "#9C27B0" }}>Note</span>Sync</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -51,7 +50,7 @@ function Navbar() {
                                     </li>
                                 </div> :
                                 <li>
-                                    <Button onClick={handleLogout} className="nav-item ms-2" variant="outlined" color="secondary" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem" }}>
+                                    <Button onClick={() => handleLogout(success)} className="nav-item ms-2" variant="outlined" color="secondary" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem" }}>
                                         logout
                                     </Button>
                                 </li>

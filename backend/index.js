@@ -1,6 +1,5 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config()
-}
+
+require('dotenv').config({path: "backend/.env"})
 const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -12,7 +11,8 @@ const notesRoute = require('./routes/notes')
 const app = express()
 
 // mongoose init
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/NoteSync'
+const dbUrl = process.env.DB_URL
+// const dbUrl = 
 async function main() {
   await mongoose.connect(dbUrl);
   console.log("Database connected");
@@ -43,5 +43,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 8080
 app.listen(port, (req, res) => {
-    console.log('Listening to the port 8080');
+    console.log('Listening to the port ' + port);
 })

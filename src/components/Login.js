@@ -1,9 +1,11 @@
-import React, { useContext, useState } from 'react'
-import { TextField, Button, InputAdornment, InputLabel, OutlinedInput, FormControl, IconButton, FormHelperText} from '@mui/material';
+import React, { useContext, useState } from 'react';
+import { TextField, Button, InputAdornment, InputLabel, OutlinedInput, FormControl, IconButton, FormHelperText, colors } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link, useNavigate } from "react-router-dom";
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/home.css"
-
+import Alertss from "./Alertss";
 import { AlertContext } from '../context/AlertContext';
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
@@ -18,6 +20,7 @@ import '../styles/login.css';
 
 function Login(props) {
 
+    const location = useLocation()
     const navigate = useNavigate()
     const { showAlert } = useContext(AlertContext)
     const [showPassword, setShowPassword] = useState(false)
@@ -42,23 +45,15 @@ function Login(props) {
                 body: JSON.stringify(values)
             })
             const json = await response.json()
+            console.log(json);
 
             if (json.success) {
                 localStorage.setItem("token", json.authToken)
                 navigate(`/`)
                 showAlert(`Welcome back ${values.username}`, "success")
             } else {
-                console.error(json.message, "error")
-                toast.warn('Invalid Credentials!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                    });
+                showAlert(json.message, "error")
+
             }
         }
     })

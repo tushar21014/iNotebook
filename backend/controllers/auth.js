@@ -16,7 +16,7 @@ module.exports.createUser = async (req, res) => {
     const data = {
         user: { id: user._id }
     }
-    console.log(process.env.SECRET);
+    // console.log(process.env.SECRET);
     const authToken = jwt.sign(data, 'b0742345623214e7f5aac75a4200799d80b55d26a62b97cd23015c33ae3ac11513e2e7', { expiresIn: 600 })
     res.status(201).json({ success: true, user: resp, authToken })
 }

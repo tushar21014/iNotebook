@@ -1,19 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom";
+
 function Footer() {
     return (
         <footer>
             <div className="content">
                 <div className="top">
                     <div className="logo-details">
-                        <span className="logo_name"><span style={{ color: "#9C27B0" }}>i</span>Notebook</span>
+                        <span className="logo_name"><span style={{ color: "#9C27B0" }}>Note</span>Sync</span>
                     </div>
                     <div className="media-icons">
-                        <Link to="/"><i className="fab fa-facebook-f"></i></Link>
-                        <Link to="/"><i className="fab fa-twitter"></i></Link>
-                        <Link to="/"><i className="fab fa-instagram"></i></Link>
-                        <Link to="/"><i className="fab fa-linkedin-in"></i></Link>
-                        <Link to="/"><i className="fab fa-youtube"></i></Link>
+                        <a href="https://www.linkedin.com/in/rahul-sahani-472201237/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/PoetOfHerAlgos" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/shemademeapoetry/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+                        {/* <a href="#" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a> */}
+                        {/* <a href="#" target="_blank"  rel="noreferrer"><i className="fab fa-youtube"></i></a> */}
                     </div>
                 </div>
                 <div className="link-boxes">
@@ -34,14 +35,14 @@ function Footer() {
                         <li><Link to="/login">Sign-in</Link></li>
                         <li><Link to="/register">Join Free</Link></li>
                     </ul>
-                    <ul className="box">
+                    {/* <ul className="box">
                         <li className="link_name">Top Categories</li>
                         <li><Link to="/c/61554bfe801949ad7b9be4ff">Tent Notes</Link></li>
                         <li><Link to="/c/61554c2753bcf306407cb1bd">RV and Van Notes</Link></li>
                         <li><Link to="/c/61554c43d2a6b15f764aff36">Canoe Notes</Link></li>
                         <li><Link to="c/61554c63dfd6a37d71449b5c">Survivalist Notes</Link></li>
-                    </ul>
-                    <ul className="box input-box">
+                    </ul> */}
+                    <ul className="box input-box" style={{marginLeft: 'auto'}}>
                         <li className="link_name">About NoteSync</li>
                         <li style={{ color: "#F7FFFF" }}>
                             An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee

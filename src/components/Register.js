@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { TextField, Button, InputAdornment, InputLabel, OutlinedInput, FormControl, IconButton, FormHelperText } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link, useNavigate } from "react-router-dom";
 import avataars from "../images/avataaars.png"
+
+import { AlertContext } from '../context/AlertContext';
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
@@ -13,6 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
+    const { showAlert } = useContext(AlertContext)
 
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
@@ -51,18 +54,10 @@ function Register() {
             console.log(json)
             if (json.success) {
                 navigate("/login")
+                showAlert(json.message, "success")
             } else {
                 console.error(json.message, "error")
-                toast.warn('Invalid Credentials!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                    });
+                showAlert(json.message, "error")
             }
         }
     })

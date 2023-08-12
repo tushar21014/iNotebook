@@ -16,7 +16,7 @@ function About() {
             <Alertss />
             <div className="text-white aboutImg text-center">
                 <div className="note-img">
-                    <h1 className="display-4">Elevate Your NoteSync</h1>
+                    <h1 className="display-4">Elevate Your <span style={{ color: "#9C27B0" }}> Note</span>Sync</h1>
                     <p>An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@ function About() {
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <img className="img-fluid awesome" src={awesome} alt="about-awesome" />
+                        <img className="img-fluid awesome" src={awesome} alt="about-awesome" style={{height: "80%", display: "block", margin: "0 auto", borderRadius: "10px", boxShadow: "0px 0px 50px 0px #350757"}}/>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@ function About() {
                         <img className="img-fluid" src={login} alt="about-awesome" />
                     </div>
                     <div className="col-md-6 d-flex flex-column justify-content-center">
-                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Embrace Creation, Embrace  <span style={{ color: "#9C27B0" }}> NoteSync</span> </h2>
+                        <h2 className="mb-3" style={{ fontWeight: "Bold" }}>Embrace Creation, Embrace  <span style={{ color: "#9C27B0" }}> Note</span>Sync </h2>
                         <p>
                             In a world where creativity reigns supreme, don't let the mundane bind you. Every note you craft, every idea you foster, it all starts with a spark. Let NoteSync be the canvas where your sparks evolve into brilliance.
                             Join us, and remember: The act of creation is always significant. Just like every note you craft. Let NoteSync be your partner in this remarkable journey.
@@ -61,12 +61,12 @@ function About() {
                         It's not just about notes; it's about inspiration that breeds innovation. It's about shaping a future where learning knows no bounds. Join us on this transformative journey, where brilliance is not just an outcome; it's a way of life. <br/>
                         Unleash the power of your ideas. Dive into a world where learning is an experience, where innovation thrives, and where you hold the pen to your destiny. Empower yourself, for you are the author of your academic narrative. Welcome to a future where education is not just learned; it's lived.
                         </p>
-                        <div className="d-flex justify-content-center mt-3">
+                        {/* <div className="d-flex justify-content-center mt-3">
                             <Button component={Link} to="/new" variant="contained" color="secondary" style={{ color: "White", textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.3rem" }}>Create New Note</Button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-md-6">
-                        <img className="img-fluid awesome" src={awesome2} alt="about-awesome"  style={{height: "80%", display: "block", margin: "0 auto", borderRadius: "10px"}}/>
+                        <img className="img-fluid awesome" src={awesome2} alt="about-awesome"  style={{height: "80%", display: "block", margin: "0 auto", borderRadius: "10px", boxShadow: "0px 0px 50px 0px #350757"}}/>
                     </div>
                 </div>
             </div>
