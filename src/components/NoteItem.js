@@ -3,7 +3,7 @@ import { IconButton } from '@mui/material';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 import { NoteContext } from '../context/notes/NoteContext';
-import { Dialog, Button, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, colors } from '@mui/material';
+import { Dialog, Button, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField} from '@mui/material';
 import useInputState from "../hooks/useInputState"
 import useToggleState from '../hooks/useToggleState';
 
