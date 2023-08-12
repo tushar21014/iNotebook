@@ -1,3 +1,5 @@
+
+
 Background: #171730 (Base color)
 Foreground Text: #FFFFFF (White)
 
