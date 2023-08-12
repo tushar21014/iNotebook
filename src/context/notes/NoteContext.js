@@ -17,7 +17,7 @@ export function NoteProvider(props) {
             },
         })
         const json = await response.json()
-        console.log(json)
+        // console.log(json)
         setNotes(json)
     }
 
@@ -32,7 +32,7 @@ export function NoteProvider(props) {
         })
         const json = await response.json()
         setNotes([...notes, newNotes])
-        console.log(json)
+        // console.log(json)
     }
 
     const remove = async (removeId) => {
@@ -47,7 +47,7 @@ export function NoteProvider(props) {
         setNotes(notes.filter(note => (
             note._id !== removeId
         )))
-        console.log(json)
+        // console.log(json)
     }
 
     const edit = async (title, description, tag, id) => {
@@ -63,7 +63,7 @@ export function NoteProvider(props) {
         setNotes(notes.map(note => (
             note._id === id ? { ...note, title, description, tag } : note
         )))
-        console.log(json)
+        // console.log(json)
     } 
 
     return (

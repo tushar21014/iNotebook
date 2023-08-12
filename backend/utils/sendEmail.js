@@ -20,9 +20,9 @@ const sendEmail = (options) => {
 
     transporter.sendMail(mailOptions, (err,info) => {
         if (err) {
-            console.log(err)
+            console.error(err)
         } else {
-            console.log(info)
+            console.error(info)
         }
     })
 }

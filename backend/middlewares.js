@@ -40,7 +40,7 @@ module.exports.validateNewNote = (req,res, next) => {
     const { error } = newNoteSchema.validate(req.body)
     if (error) {
         const msg = error.details.map(el => el.message).join(', ')
-        console.log(msg);
+        // console.log(msg);
         throw new ExpressError(msg, 400)
     } else {
         next()

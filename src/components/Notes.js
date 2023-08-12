@@ -36,7 +36,7 @@ function Notes() {
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getNotes()
-            console.log(notes)
+            // console.log(notes)
         } else {
             navigate('/about')
             showAlert("You need to signed in first", "error")
