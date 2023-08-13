@@ -85,8 +85,16 @@ function Login(props) {
 
     return (
         <div className='main-body '>
-            <div className='bg-svg'></div>
-            <div className="container mt-5 addnotes" >
+            <div className='bg-svg'
+            data-aos="zoom-out"
+            data-aos-duration="600"
+            data-aos-delay="100"
+            ></div>
+            <div className="container mt-5 addnotes"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="100"
+            >
                 <Button className="mb-4" variant="text" color="secondary" startIcon={<ArrowBackIcon />} component={Link} to="/" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif" }}>Home</Button>
                 <h2 style={{ fontWeight: "Bold" }}>Login</h2>
 

@@ -11,6 +11,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import './styles/app.css';
 
+import 'animate.css';
+
 import { useEffect } from "react";
 
 import AOS from "aos";

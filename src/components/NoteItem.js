@@ -68,7 +68,12 @@ function NoteItem({ note }) {
                 </form>
             </Dialog>
 
-            <div className="card" style={{background: "#350757", color: "FFFFFF",  backgroundColor: "#171730"}}>
+            <div 
+            // data-aos="fade-up"
+            // data-aos-duration="800"
+            // data-aos-delay="100"
+            // data-aos-anchor-placement="bottom-bottom"
+            className="card" style={{background: "#350757", color: "FFFFFF",  backgroundColor: "#171730"}}>
                 <div className="card-body">
                     <div className="d-flex align-items-center">
                         <h5 className="card-title">{note.title}</h5>

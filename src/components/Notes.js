@@ -28,8 +28,8 @@ function Notes() {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            });
-        
+        });
+
     }
 
 
@@ -53,10 +53,11 @@ function Notes() {
                 </div>
             }
             {notes ? notes.map(note =>
-                <NoteItem key={note._id} note={note} />
+                <NoteItem
+                    key={note._id} note={note} />
             )
-        : handleLogout()
-        }
+                : handleLogout()
+            }
             <ToastContainer
                 position="bottom-right"
                 autoClose={5000}
