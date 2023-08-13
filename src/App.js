@@ -11,12 +11,25 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import './styles/app.css';
 
+import { useEffect } from "react";
+
+import AOS from "aos";
+import 'aos/dist/aos.css';
+
 function App() {
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      AOS.init();
+    });
+  }, []);
+
 
   return (
     <>
       <NoteProvider>
         <AlertProvider>
+          <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+          <script src="bower_components/aos/dist/aos.js"></script>
           <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="/new" index element={<AddNote />} />

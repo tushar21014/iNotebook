@@ -5,11 +5,19 @@ function Footer() {
     return (
         <footer>
             <div className="content">
-                <div className="top">
-                    <div className="logo-details">
+                <div className="top"
+                    data-aos="fade-right"
+                    data-aos-duration="600"
+                    data-aos-delay="100"
+                
+                >
+                    <div className="logo-details"
+                    >
                         <span className="logo_name"><span style={{ color: "#9C27B0" }}>Note</span>Sync</span>
                     </div>
-                    <div className="media-icons">
+                    <div className="media-icons"
+                    data-aos-delay="300"
+                    >
                         <a href="https://www.linkedin.com/in/rahul-sahani-472201237/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
                         <a href="https://twitter.com/PoetOfHerAlgos" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/shemademeapoetry/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
@@ -17,7 +25,11 @@ function Footer() {
                         {/* <a href="#" target="_blank"  rel="noreferrer"><i className="fab fa-youtube"></i></a> */}
                     </div>
                 </div>
-                <div className="link-boxes">
+                <div className="link-boxes" 
+                data-aos="fade-right"
+                data-aos-duration="600"
+                data-aos-delay="300"
+                >
                     <ul className="box">
                         <li className="link_name">Company</li>
                         <li><Link to="/">Home</Link></li>
@@ -42,8 +54,12 @@ function Footer() {
                         <li><Link to="/c/61554c43d2a6b15f764aff36">Canoe Notes</Link></li>
                         <li><Link to="c/61554c63dfd6a37d71449b5c">Survivalist Notes</Link></li>
                     </ul> */}
-                    <ul className="box input-box" style={{marginLeft: 'auto'}}>
-                        <li className="link_name">About NoteSync</li>
+                    <ul className="box input-box" style={{ marginLeft: 'auto' }}
+                                        // data-aos="zoom-in-left"
+                                        // data-aos-duration="600"
+                                        // data-aos-delay="300"
+                    >
+                        <li className="link_name">About <span style={{ color: "#9C27B0", fontWeight: "600" }}>Note</span>Sync</li>
                         <li style={{ color: "#F7FFFF" }}>
                             An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee
                         </li>

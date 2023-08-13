@@ -1,5 +1,4 @@
 import { createContext, useState } from "react"
-
 export const NoteContext = createContext()
 
 export function NoteProvider(props) {

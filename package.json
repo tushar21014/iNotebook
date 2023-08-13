@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "aos": "^2.3.4",
     "concurrently": "^6.4.0",
     "dotenv": "^10.0.0",
     "formik": "^2.2.9",
