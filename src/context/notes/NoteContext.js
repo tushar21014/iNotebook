@@ -29,7 +29,7 @@ export function NoteProvider(props) {
             },
             body: JSON.stringify(newNotes),
         })
-        const json = await response.json()
+        // const json = await response.json()
         setNotes([...notes, newNotes])
         // console.log(json)
     }
@@ -42,7 +42,7 @@ export function NoteProvider(props) {
                 'auth-token' : localStorage.getItem('token')
             },
         })
-        const json = await response.json()
+        // const json = await response.json()
         setNotes(notes.filter(note => (
             note._id !== removeId
         )))
@@ -58,7 +58,7 @@ export function NoteProvider(props) {
             },
             body: JSON.stringify({ title, description, tag })
         })
-        const json = await response.json()
+        // const json = await response.json()
         setNotes(notes.map(note => (
             note._id === id ? { ...note, title, description, tag } : note
         )))
