@@ -47,7 +47,6 @@
 
 @media (max-width: 1000px) {
   .aboutImg {
-    width: 100dvw;
     display: flex;
     flex-direction: column;
     justify-content: center;
