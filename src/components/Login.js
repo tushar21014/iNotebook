@@ -62,6 +62,7 @@ function Login(props) {
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
+        console.log("USER", getFieldProps('username'), getFieldProps('password'));
     };
 
     const handleMouseDownPassword = (event) => {

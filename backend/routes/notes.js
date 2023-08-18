@@ -8,7 +8,7 @@ const router = express.Router()
 // Get all the notes using : GET /api/notes/
 router.get('/', fetchUser, catchAsync(fetchAllNotes))
 
-// Get all the notes using : POST /api/notes/
+// Add the notes using : POST /api/notes/
 router.post('/', fetchUser, validateNewNote, catchAsync(addNote))
 
 // Update the notes using: PUT /api/notes

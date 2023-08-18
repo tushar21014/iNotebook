@@ -29,9 +29,7 @@ export function NoteProvider(props) {
             },
             body: JSON.stringify(newNotes),
         })
-        // const json = await response.json()
         setNotes([...notes, newNotes])
-        // console.log(json)
     }
 
     const remove = async (removeId) => {

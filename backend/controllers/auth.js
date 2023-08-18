@@ -1,6 +1,8 @@
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
+
+require('dotenv').config({path: "backend/.env"})
 const crypto = require('crypto')
 
 const User = require('../models/User')
@@ -17,7 +19,7 @@ module.exports.createUser = async (req, res) => {
         user: { id: user._id }
     }
     // console.log(process.env.SECRET);
-    const authToken = jwt.sign(data, 'b0742345623214e7f5aac75a4200799d80b55d26a62b97cd23015c33ae3ac11513e2e7', { expiresIn: 600 })
+    const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
     res.status(201).json({ success: true, user: resp, authToken })
 }
 
@@ -28,7 +30,7 @@ module.exports.loginUser = async (req, res) => {
         const data = {
             user: { id: foundUser._id }
         }
-        const authToken = jwt.sign(data, 'b0742345623214e7f5aac75a4200799d80b55d26a62b97cd23015c33ae3ac11513e2e7', { expiresIn: 600 })
+        const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
         res.status(201).json({ success: true, authToken })
     } else {
         throw new ExpressError("invalid credentials !!", 400)
@@ -50,7 +52,7 @@ module.exports.forgotPassword = async (req, res, next) => {
     const resetToken = await user.getResetPasswordToken()
     console.log(resetToken)
     await user.save()
-    const resetUrl = `http://localhost:3000/passwordReset/${resetToken}`
+    const resetUrl = `https://note-sync-rs.vercel.app/passwordReset/${resetToken}`
     const message = `
     <h1>You have requested for password reset</h1>
     <p>pls go to this link to reset your password</p>

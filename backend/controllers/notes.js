@@ -9,9 +9,9 @@ module.exports.fetchAllNotes = async (req, res) => {
 
 module.exports.addNote = async (req, res) => {
     const { id } = req.user
-    const { title, description, tag } = req.body
+    const { title, description, tag, notecolor } = req.body
     const notes = new Notes({
-        title, description, tag, user: id
+        title, description, tag, notecolor, user: id
     })
     const resp = await notes.save()
     res.status(201).json(resp)

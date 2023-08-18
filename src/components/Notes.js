@@ -19,29 +19,28 @@ function Notes() {
     const handleLogout = (evt) => {
         localStorage.removeItem('token')
         navigate('/login')
-        toast.warn('Try Login Again!', {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
+        showAlert("Please Login Again!", "error")
 
     }
 
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
-            getNotes()
-            // console.log(notes)
+            try {
+                getNotes()
+                    .catch(error => {
+                        console.log("CATCH (Promise rejection)");
+                        handleLogout();
+                    });
+            } catch (error) {
+                handleLogout();
+            }
         } else {
-            navigate('/about')
-            showAlert("You need to signed in first", "error")
+            navigate('/about');
+            showAlert("You need to sign in first", "error");
         }
-    }, [])
+    }, []);
+    
 
     return (
         <div className="row ps-5 mt-4 mb-1">
