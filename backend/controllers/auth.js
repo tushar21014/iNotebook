@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
-require('dotenv').config({path: "backend/.env"})
+require('dotenv').config()
 const crypto = require('crypto')
 
 const User = require('../models/User')
