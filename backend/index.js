@@ -20,7 +20,9 @@ async function main() {
 }
 main().catch(err => console.log(err));
 
-app.use(cors())
+app.use(cors({
+    origin: ['https://note-sync-rs.vercel.app', 'http://localhost:3000'],
+}));
 
 // middleware
 app.use(express.json())

@@ -17,6 +17,10 @@ import 'react-toastify/dist/ReactToastify.css';
 function Register() {
     const { showAlert } = useContext(AlertContext)
 
+    // const host = "https://vast-gold-ostrich-hose.cyclic.app"
+    const host = "http://localhost:8080"
+
+
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
 
@@ -43,7 +47,7 @@ function Register() {
         validationSchema: registerSchema,
         onSubmit: async (values) => {
             const {username, email, password} = values
-            const response = await fetch("https://vast-gold-ostrich-hose.cyclic.app/api/auth/createuser", {
+            const response = await fetch( host + "/api/auth/createuser", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

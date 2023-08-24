@@ -25,6 +25,9 @@ function Login(props) {
     const { showAlert } = useContext(AlertContext)
     const [showPassword, setShowPassword] = useState(false)
 
+    // const host = "https://vast-gold-ostrich-hose.cyclic.app"
+    const host = "http://localhost:8080"
+
     const loginSchema = Yup.object().shape({
         username: Yup.string().min(3).max(25).required().matches(/^[a-z0-9]+$/i, "Username should contain alphabets and numbers only"),
         password: Yup.string().required().min(4).matches(/^[a-z0-9]+$/i, "Password should contain alphabets and numbers only")
@@ -37,7 +40,8 @@ function Login(props) {
         },
         validationSchema: loginSchema,
         onSubmit: async (values) => {
-            const response = await fetch("https://vast-gold-ostrich-hose.cyclic.app/api/auth/login", {
+
+            const response = await fetch( host + "/api/auth/login", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,7 +66,7 @@ function Login(props) {
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
-        console.log("USER", getFieldProps('username'), getFieldProps('password'));
+        // console.log("USER", getFieldProps('username'), getFieldProps('password'));
     };
 
     const handleMouseDownPassword = (event) => {

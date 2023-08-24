@@ -40,7 +40,7 @@ function FormValidations() {
         title: Yup.string().min(3).required(),
         description: Yup.string().min(3).required(),
         tag: Yup.string().min(3).required(),
-        notecolor: Yup.string()
+        // ncolor: Yup.string(),
     })
 
     const formik = useFormik({
@@ -48,10 +48,11 @@ function FormValidations() {
             title: "",
             description: "",
             tag: "",
-            notecolor: "",
+            // ncolor: "#FF5722",
         },
         validationSchema: noteSchema,
         onSubmit: (values) => {
+            console.log(values)
             add(values)
             navigate('/')
             showAlert(`Created note ${values.title} successfully`, "success")
@@ -114,15 +115,15 @@ function FormValidations() {
                             InputProps={inputProps}
                         />
                     </div>
-                    <div className="title mb-4">
+                    {/* <div className="title mb-4">
 
                         <TextField
-                            {...getFieldProps('notecolor')}
-                            error={Boolean(touched.notecolor && errors.notecolor)}
-                            helperText={touched.notecolor && errors.notecolor}
+                            {...getFieldProps('ncolor')}
+                            error={Boolean(touched.ncolor && errors.ncolor)}
+                            helperText={touched.ncolor && errors.ncolor}
                             color="secondary" label="Note Color" variant="outlined" fullWidth
                             InputProps={inputProps} InputLabelProps={inputLabelProps} autoFocus margin="dense" value={priorityColorInput} onChange={updatePriorityColorInput} type="text"/>
-                    </div>
+                    </div> */}
                     <Button type="submit" fullWidth size="large" className="mb-4" variant="contained" color="secondary" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>Add Note</Button>
                 </form>
             </div>

@@ -1,5 +1,5 @@
 import React, { useContext, memo, useState } from 'react'
-import { IconButton } from '@mui/material';
+import { IconButton, colors } from '@mui/material';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 import { NoteContext } from '../context/notes/NoteContext';
@@ -19,6 +19,8 @@ function NoteItem({ note }) {
     const [title, updateTitle] = useInputState(note.title)
     const [description, updateDescription] = useInputState(note.description)
     const [tag, updateTag] = useInputState(note.tag)
+    // const [ncolor, updatencolor] = useInputState(note.ncolor)
+
 
     const [priorityColorInput, setPriorityColorInput] = useState('');
 
@@ -57,7 +59,7 @@ function NoteItem({ note }) {
 
     const inputLabelPropsitems = {
         style: {
-            color: priorityfontColor,
+            color: '#00A8E8',
             fontSize: "18px",
             fontWeight: "900"
         }
@@ -73,25 +75,26 @@ function NoteItem({ note }) {
                         <DialogContentText style={{ color: "#FFFFFF", fontFamily: "'Poppins', sans-serif", fontSize: "1rem", marginBottom: "0.5rem" }}>
                             Edit your note. edit the field that you want to edit in note
                         </DialogContentText>
-                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} inputProps={{ minlength: 3 }} autoFocus required color="secondary" margin="dense" value={title} onChange={updateTitle} label="Title" type="text" fullWidth variant="standard" />
-                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} inputProps={{ minlength: 3 }} autoFocus required color="secondary" margin="dense" value={description} onChange={updateDescription} label="Description" type="text" fullWidth variant="standard" />
-                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} inputProps={{ minlength: 3 }} autoFocus required color="secondary" margin="dense" value={tag} label="tag" onChange={updateTag} type="text" fullWidth variant="standard" />
-                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} autoFocus color="secondary" margin="dense" value={priorityColorInput} onChange={updatePriorityColorInput} label="Priority Color" type="text" fullWidth variant="standard" />
-                        <FormControl fullWidth margin="normal" color="secondary">
-                            <InputLabel>Select Priority Color</InputLabel>
+                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} inputProps={{ minLength: 3 }} autoFocus required color="secondary" margin="dense" value={title} onChange={updateTitle} label="Title" type="text" fullWidth variant="standard" />
+                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} inputProps={{ minLength: 3 }} autoFocus required color="secondary" margin="dense" value={description} onChange={updateDescription} label="Description" type="text" fullWidth variant="standard" />
+                        <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} inputProps={{ minLength: 3 }} autoFocus required color="secondary" margin="dense" value={tag} label="tag" onChange={updateTag} type="text" fullWidth variant="standard" />
+                        {/* <TextField InputProps={inputPropsitems} InputLabelProps={inputLabelPropsitems} autoFocus color="secondary" margin="dense" value={priorityColorInput} onChange={updatePriorityColorInput} label="Priority Color" type="text" fullWidth variant="standard" /> */}
+                        {/* <FormControl fullWidth margin="normal" color="secondary">
+                            <InputLabel style={inputLabelPropsitems.style}>Select Priority Color</InputLabel>
                             <Select
                                 value={priorityColorInput}
                                 onChange={updatePriorityColorInput}
                                 label="Select Priority Color"
+                                style={{color : priorityfontColor}}
+                                // onChangeCapture={ updatencolor }
                             >
-                                {/* Map through the priorityColors array to render options */}
                                 {priorityColors.map((colorOption, index) => (
                                     <MenuItem key={index} value={colorOption.color} style={{ color: colorOption.color }}>
                                         {colorOption.label}
                                     </MenuItem>
                                 ))}
                             </Select>
-                        </FormControl>
+                        </FormControl> */}
                     </DialogContent>
                     <DialogActions>
                         <Button variant="outlined" color="secondary" onClick={handleClose} style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1rem" }}>Cancel</Button>
@@ -101,7 +104,8 @@ function NoteItem({ note }) {
             </Dialog>
 
             <div
-                className="card" style={{ background: "#350757", color: "FFFFFF", backgroundColor: priorityColor }}>
+                className="card" style={{ background: "#350757", color: priorityfontColor === "#FFFFFF" ? "#FFFFFF" : "#000"  , backgroundColor: priorityColor }}>
+                    <div style={{borderRadius: "50%", position: "relative", top: "5px", left: "5px", backgroundColor: priorityColor}}></div>
                 <div className="card-body">
                     <div className="d-flex align-items-center">
                         <h5 className="card-title">{note.title}</h5>

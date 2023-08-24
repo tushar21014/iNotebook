@@ -6,9 +6,11 @@ export function NoteProvider(props) {
     const initialNotes = []
 
     const [notes, setNotes] = useState(initialNotes)
+    // const host = "https://vast-gold-ostrich-hose.cyclic.app"
+    const host = "http://localhost:8080"
 
     const getNotes = async () => {
-        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/`, {
+        const response = await fetch(host + "/api/notes/", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,19 +23,24 @@ export function NoteProvider(props) {
     }
 
     const add = async (newNotes) => {
-        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/`, {
+
+        const response = await fetch(host + "/api/notes/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'auth-token' : localStorage.getItem('token')
             },
-            body: JSON.stringify(newNotes),
-        })
+            body: JSON.stringify({
+                title: newNotes.title,
+                description: newNotes.description,
+                tag: newNotes.tag,
+            }),
+        });
         setNotes([...notes, newNotes])
     }
 
     const remove = async (removeId) => {
-        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/${removeId}`, {
+        const response = await fetch(host + "/api/notes/"+ removeId, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +55,7 @@ export function NoteProvider(props) {
     }
 
     const edit = async (title, description, tag, id) => {
-        const response = await fetch(`https://vast-gold-ostrich-hose.cyclic.app/api/notes/${id}`, {
+        const response = await fetch(host + "/api/notes/" + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -17,9 +17,8 @@ const notesSchema = new Schema({
         default: "General",
         min: 3,
     },
-    notecolor: {
+    ncolor: {
         type: String,
-        default: "#171730",
     },
     user: {
         type: Schema.Types.ObjectId,
