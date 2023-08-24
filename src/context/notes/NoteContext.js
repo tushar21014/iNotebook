@@ -1,13 +1,12 @@
 import { createContext, useState } from "react"
 export const NoteContext = createContext()
-
 export function NoteProvider(props) {
 
     const initialNotes = []
 
     const [notes, setNotes] = useState(initialNotes)
-    // const host = "https://vast-gold-ostrich-hose.cyclic.app"
-    const host = "http://localhost:8080"
+    
+    const host = process.env.REACT_APP_API_URL
 
     const getNotes = async () => {
         const response = await fetch(host + "/api/notes/", {
