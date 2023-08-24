@@ -18,7 +18,6 @@ module.exports.createUser = async (req, res) => {
     const data = {
         user: { id: user._id }
     }
-    // console.log(process.env.SECRET);
     const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
     res.status(201).json({ success: true, user: resp, authToken })
 }
@@ -30,6 +29,7 @@ module.exports.loginUser = async (req, res) => {
         const data = {
             user: { id: foundUser._id }
         }
+        
         const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
         res.status(201).json({ success: true, authToken })
     } else {
