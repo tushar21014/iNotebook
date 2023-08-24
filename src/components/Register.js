@@ -17,8 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Register() {
     const { showAlert } = useContext(AlertContext)
 
-    // const host = "https://vast-gold-ostrich-hose.cyclic.app"
-    const host = "http://localhost:8080"
+    const host = process.env.REACT_APP_API_URL
 
 
     const navigate = useNavigate()
