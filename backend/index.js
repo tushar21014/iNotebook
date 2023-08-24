@@ -21,7 +21,7 @@ async function main() {
 main().catch(err => console.log(err));
 
 app.use(cors({
-    origin: ['https://note-sync-rs.vercel.app', 'http://localhost:3000'],
+    origin: '*',
 }));
 
 // middleware
