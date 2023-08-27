@@ -30,7 +30,7 @@ app.use(express.json())
 
 // Routes
 app.get('/', (req, res) => {
-    res.send("Hello wprld")
+    res.send("Visit: https://note-sync-rs.vercel.app/")
 })
 
 app.use('/api/auth', authRoute)
