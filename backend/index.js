@@ -1,5 +1,6 @@
-// require('dotenv').config({path: "backend/.env"})
-require('dotenv').config()
+
+require('dotenv').config({path: "backend/.env"})
+// require('dotenv').config()
 const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -19,7 +20,10 @@ async function main() {
 }
 main().catch(err => console.log(err));
 
-app.use(cors())
+app.use(cors({
+    origin: 'https://note-sync-rs.vercel.app', 
+    optionsSuccessStatus: 200
+}));
 
 // middleware
 app.use(express.json())
@@ -27,7 +31,7 @@ app.use(express.json())
 
 // Routes
 app.get('/', (req, res) => {
-    res.send("Hello wprld")
+    res.send("Visit: https://note-sync-rs.vercel.app/")
 })
 
 app.use('/api/auth', authRoute)
