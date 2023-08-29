@@ -46,7 +46,7 @@ function About() {
                             <Button component={Link} to="/new" variant="contained" color="secondary" style={{ color: "White", textTransform: "none", fontFamily: "'Poppins', sans-serif", fontSize: "1.3rem" }}>Create New Note</Button>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 image-container">
                         <img
                             data-aos="fade-left"
                             data-aos-duration="600"
