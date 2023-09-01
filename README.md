@@ -55,7 +55,9 @@ Education isn't confined to textbooks; it's a living, breathing part of you. Not
 
 In the project directory, you can run the following commands:
 
-```bash npm start```
+```bash
+npm start
+```
 
 Runs the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
