@@ -1,5 +1,5 @@
-
-require('dotenv').config()
+require('dotenv').config({path: "backend/.env"})
+// require('dotenv').config()
 const crypto = require('crypto')
 
 const User = require('../models/User')
@@ -15,6 +15,7 @@ module.exports.createUser = async (req, res) => {
     const data = {
         user: { id: user._id }
     }
+    
     const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
     res.status(201).json({ success: true, user: resp, authToken })
 }
@@ -26,7 +27,7 @@ module.exports.loginUser = async (req, res) => {
         const data = {
             user: { id: foundUser._id }
         }
-        
+        console.log("JWT KEY: ", process.env.JWT_KEY)
         const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
         res.status(201).json({ success: true, authToken })
     } else {

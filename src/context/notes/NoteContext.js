@@ -9,7 +9,7 @@ export function NoteProvider(props) {
     const host = process.env.REACT_APP_API_URL
 
     const getNotes = async () => {
-        const response = await fetch(host + "/api/notes/", {
+        const response = await fetch(host + "/api/notes", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ export function NoteProvider(props) {
             },
         })
         const json = await response.json()
-        // console.log(json)
+        console.log("JSON: ", json)
         setNotes(json)
     }
 
