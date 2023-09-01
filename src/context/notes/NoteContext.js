@@ -17,7 +17,6 @@ export function NoteProvider(props) {
             },
         })
         const json = await response.json()
-        console.log("JSON: ", json)
         setNotes(json)
     }
 

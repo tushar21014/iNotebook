@@ -52,7 +52,7 @@ function FormValidations() {
         },
         validationSchema: noteSchema,
         onSubmit: (values) => {
-            console.log(values)
+            // console.log(values)
             add(values)
             navigate('/')
             showAlert(`Created note ${values.title} successfully`, "success")

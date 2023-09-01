@@ -33,7 +33,7 @@ module.exports.loginUser = async (req, res) => {
         const data = {
             user: { id: foundUser._id }
         }
-        console.log("JWT KEY: ", process.env.JWT_KEY)
+        // console.log("JWT KEY: ", process.env.JWT_KEY)
         const authToken = jwt.sign(data, process.env.JWT_KEY, { expiresIn: 600 })
         res.status(201).json({ success: true, authToken })
     } else {
@@ -54,7 +54,7 @@ module.exports.forgotPassword = async (req, res, next) => {
         throw new ExpressError("Email Could be Sent , Please register first", 404)
     }
     const resetToken = await user.getResetPasswordToken()
-    console.log(resetToken)
+    // console.log(resetToken)
     await user.save()
     const resetUrl = `https://note-sync-rs.vercel.app/passwordReset/${resetToken}`
     const message = `
