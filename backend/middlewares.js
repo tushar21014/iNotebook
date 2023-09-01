@@ -1,5 +1,8 @@
+// require('dotenv').config({path: "backend/.env"})
 require('dotenv').config()
-
+if(process.env.REACT_APP_NODE_ENV == "LOCAL"){
+    require('dotenv').config({path: "backend/.env"})
+}
 const jwt = require('jsonwebtoken');
 const {userSchema, userSchemaLogin, newNoteSchema} = require('./joiSchema')
 const ExpressError = require('./utils/ExpressError')

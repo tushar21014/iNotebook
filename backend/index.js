@@ -1,6 +1,9 @@
 
-require('dotenv').config({path: "backend/.env"})
-// require('dotenv').config()
+// require('dotenv').config({path: "backend/.env"})
+require('dotenv').config()
+if(process.env.REACT_APP_NODE_ENV == "LOCAL"){
+    require('dotenv').config({path: "backend/.env"})
+}
 const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors')

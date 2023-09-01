@@ -1,6 +1,11 @@
 // node mailer allows you to send email
 const nodemailer = require('nodemailer');
+
 require('dotenv').config()
+if(process.env.REACT_APP_NODE_ENV == "LOCAL"){
+    require('dotenv').config({path: "backend/.env"})
+}
+
 
 const sendEmail = (options) => {
     const transporter = nodemailer.createTransport({
