@@ -14,6 +14,7 @@ import * as Yup from 'yup';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import '../styles/login.css'
 function Register() {
     const { showAlert } = useContext(AlertContext)
 
@@ -85,21 +86,22 @@ function Register() {
 
 
     return (
-        <div>
+        <div >
+            <div className='bg-svg'></div>
             <div className="d-flex" style={{borderRadius: "20px"}}>
                 <div 
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-delay="100"
-                className="col-md-5">
-                    <img className="img-fluid" src={avataars} alt="register" style={{ width: "100%", height: "100vh", objectFit: "cover" }} />
+                className="col-md-5 resp-image">
+                    <img className="img-fluid " src={avataars} alt="register" style={{ width: "100%", height: "100vh", objectFit: "cover" }} />
                 </div>
 
                 <div 
                 data-aos="fade-up"
                 data-aos-duration="600"
                 data-aos-delay="100"
-                className="col-md-7 ps-5 pe-5 pt-5" style={{  backgroundColor: "#171730" }}>
+                className="col-md-7 ps-5 pe-5 pt-5 resp-register" style={{  backgroundColor: "#171730" }}>
                     <Button className="mb-4" variant="text" color="secondary" startIcon={<ArrowBackIcon />} component={Link} to="/" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif" }}>Home</Button>
                     <h2 style={{ fontWeight: "Bold" }}>Create a new account</h2>
                     <p className="mb-4">Use your email to create a new account</p>
