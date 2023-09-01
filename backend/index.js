@@ -20,10 +20,14 @@ async function main() {
 }
 main().catch(err => console.log(err));
 
-app.use(cors({
-    origin: 'https://note-sync-rs.vercel.app', 
-    optionsSuccessStatus: 200
-}));
+const corsOptions = {
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  };
+  
+app.use(cors(corsOptions));
+  
 
 // middleware
 app.use(express.json())
