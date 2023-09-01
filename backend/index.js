@@ -13,7 +13,7 @@ const app = express()
 
 // mongoose init
 const dbUrl = process.env.DB_URL
-// const dbUrl = 
+
 async function main() {
   await mongoose.connect(dbUrl);
   console.log("Database connected");
