@@ -14,7 +14,7 @@
   width: auto;
   height: 80vh;
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4) 20%, transparent 50%), url("../images/about.jpg");
+  /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4) 20%, transparent 50%), url("../images/about.jpg"); */
   background-size: cover;
   background-position: center;
   text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
