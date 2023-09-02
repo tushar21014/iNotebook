@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from "./Navbar";
 import '../styles/about.css';
 import awesome from '../images/about - awesome.jpeg'
@@ -9,13 +9,29 @@ import Alertss from "./Alertss";
 import { Link } from "react-router-dom";
 import Footer from './Footer';
 
+import placeholder from '../images/about-min.jpg'
+import highQualityImgSrc from '../images/about.jpg'
 
 function About() {
+    const [imgSrc, setImgSrc] = useState(placeholder)
+    // const highQualityImgSrc = "../images/about.jpg";
+
+    useEffect(() => {
+        const highQualityImg = new Image();
+        highQualityImg.src = highQualityImgSrc;
+
+        highQualityImg.onload = () => {
+            setImgSrc(highQualityImgSrc);
+        };
+    }, [highQualityImgSrc]);
+
     return (
         <div>
             <Navbar />
             <Alertss />
-            <div className="text-white aboutImg text-center" >
+            <div className="text-white aboutImg text-center" style={{
+                backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.4) 20%, transparent 50%), url(${imgSrc})`,
+            }}>
                 <div className="note-img">
                     <h1 className="display-4" >Elevate Your <span style={{ color: "#9C27B0" }}> Note</span>Sync</h1>
                     <p
