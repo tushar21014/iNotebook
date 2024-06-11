@@ -2,6 +2,8 @@
 
 Welcome to NoteSync, where note-taking transforms into a dynamic, innovative journey. Say goodbye to the limitations of traditional methods and embrace a new era of creativity and productivity.
 
+<img src="project images/banner.png" width="100%" />
+
 ## Unshackling the Notebook
 
 Have you ever experienced the frustration of deciphering cramped handwriting or losing crucial information within a sea of pages? The struggle ends here. NoteSync was born out of a vision to liberate you from the challenges of conventional note-taking. 
