@@ -9,6 +9,7 @@ import Alertss from "./Alertss";
 import { Link } from "react-router-dom";
 import Footer from './Footer';
 
+
 import placeholder from '../images/about-min.jpg'
 import highQualityImgSrc from '../images/about.jpg'
 

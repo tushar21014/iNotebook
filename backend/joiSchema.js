@@ -16,3 +16,4 @@ module.exports.newNoteSchema = Joi.object({
     description: Joi.string().required().min(3),
     tag: Joi.string().required().min(3)
 })
+

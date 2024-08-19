@@ -125,3 +125,4 @@ function NoteItem({ note }) {
 }
 
 export default memo(NoteItem)
+

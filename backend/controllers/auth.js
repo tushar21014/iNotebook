@@ -6,6 +6,7 @@ if(process.env.REACT_APP_NODE_ENV == "LOCAL"){
     require('dotenv').config({path: "backend/.env"})
 }
 
+
 const crypto = require('crypto')
 
 const User = require('../models/User')

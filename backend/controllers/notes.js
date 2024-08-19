@@ -7,6 +7,7 @@ module.exports.fetchAllNotes = async (req, res) => {
     res.status(201).json(notes)
 }
 
+
 module.exports.addNote = async (req, res) => {
     const { id } = req.user
     const { title, description, tag, ncolor } = req.body

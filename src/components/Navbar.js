@@ -17,6 +17,7 @@ function Navbar() {
         navigate('/login')
         showAlert(message, "error")
     }
+    
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">

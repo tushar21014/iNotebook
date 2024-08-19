@@ -22,3 +22,4 @@ router.post('/forgotpassword', catchAsync(forgotPassword))
 router.put('/resetpassword/:resetToken', catchAsync(resetPassword))
 
 module.exports = router
+

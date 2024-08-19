@@ -19,6 +19,7 @@ function FormValidations() {
     const updatePriorityColorInput = (event) => {
         setPriorityColorInput(event.target.value);
     };
+    
 
     const priorityColors = [
         { color: "#FF5722", label: "High Priority", fontColor: "black" },
