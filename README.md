@@ -1,8 +1,7 @@
-# NoteSync: Elevating Your Note-Taking Experience
+# iNotebook - Online Note-Taking App
 
-Welcome to NoteSync, where note-taking transforms into a dynamic, innovative journey. Say goodbye to the limitations of traditional methods and embrace a new era of creativity and productivity.
+iNotebook is a feature-rich online note-taking application that empowers users to create, edit, and access their notes conveniently using their account credentials. This project is built using the MERN (MongoDB, Express, React, Node.js) stack, ensuring a seamless and secure note-taking experience.
 
-<img src="project images/banner.png" width="100%" />
 
 ## Unshackling the Notebook
 
